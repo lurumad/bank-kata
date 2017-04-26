@@ -6,6 +6,11 @@ namespace Bank
     {
         public decimal Balance { get; set; }
 
+        public static Account Create(decimal amount)
+        {
+            return new Account(amount);
+        }
+
         public Account(decimal amount)
         {
 

@@ -15,5 +15,10 @@ namespace Bank
         {
             Balance += amount;
         }
+
+        public void Withdrawal(decimal amount)
+        {
+            Balance -= amount;
+        }
     }
 }

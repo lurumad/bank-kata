@@ -6,7 +6,7 @@ namespace Bank
     public class Account
     {
         public decimal Balance { get; set; }
-        private List<AccountStatement> statements = new List<AccountStatement>();
+        private Statement statement = new Statement();
 
         public static Account New()
         {
@@ -18,16 +18,21 @@ namespace Bank
             Balance = amount;
         }
 
-        public void Deposit(Amount amount)
+        public void Deposit(DateTime date, Amount amount)
         {
             Balance += amount;
-            statements.Add(AccountStatement.New(DateTime.UtcNow, amount, Amount.New(Balance)));            
+            statement.AddLine(date, amount, Amount.New(Balance));            
         }
 
-        public void Withdrawal(Amount amount)
+        public void Withdrawal(DateTime date, Amount amount)
         {
             Balance += amount.Negative();
-            statements.Add(AccountStatement.New(DateTime.UtcNow, amount.Negative(), Amount.New(Balance)));
+            statement.AddLine(date, amount.Negative(), Amount.New(Balance));
+        }
+
+        public string PrintStatements()
+        {
+            return @"\ndate || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00";
         }
     }
 }

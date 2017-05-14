@@ -24,6 +24,6 @@ public class Amount
 
     public static explicit operator Amount(decimal value)
     {
-        return new Amount(value);
+        return New(value);
     }
 }

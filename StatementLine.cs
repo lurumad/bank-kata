@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 public class StatementLine
 {
@@ -16,5 +17,10 @@ public class StatementLine
         this.date = date;
         this.amount = amount;
         this.balance = balance;
+    }
+
+    public void Print(TextWriter printer)
+    {
+
     }
 }

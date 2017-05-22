@@ -3,6 +3,7 @@ using System.IO;
 
 public class StatementLine
 {
+    private const string Line = "{0:dd/MM/yyyy} || {1} || {2} || {3}";
     private DateTime date;
     private Amount amount;
     private Amount balance;
@@ -21,5 +22,13 @@ public class StatementLine
 
     public void Print(TextWriter printer)
     {
+        if (amount < 0)
+        {
+            printer.WriteLine(Line, date, String.Empty, amount.Positive(), balance);
+        }
+        else
+        {
+            printer.WriteLine(Line, date, amount, String.Empty, balance);
+        }
     }
 }

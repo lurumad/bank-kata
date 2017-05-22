@@ -17,6 +17,11 @@ public class Amount
         return new Amount(-value);
     }
 
+    public Amount Positive()
+    {
+        return new Amount(value*-1);
+    }
+
     public static implicit operator decimal(Amount amount)
     {
         return amount.value;
@@ -25,5 +30,10 @@ public class Amount
     public static explicit operator Amount(decimal value)
     {
         return New(value);
+    }
+
+    public override string ToString()
+    {
+        return value.ToString("0.00");
     }
 }

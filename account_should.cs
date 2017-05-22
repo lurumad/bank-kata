@@ -33,7 +33,7 @@ namespace Bank
             account.Deposit(DateTime.Parse("13-01-2012"), Amount.New(2000));
             account.Withdrawal(DateTime.Parse("14-01-2012"), Amount.New(500));
             account.PrintStatements(Console.Out);
-            printer.ToString().Should().Be("date || credit || debit || balance\r\n");
+            printer.ToString().Should().Be("date || credit || debit || balance\r\n14/01/2012 ||  || 500,00 || 2500,00\r\n13/01/2012 || 2000,00 ||  || 3000,00\r\n10/01/2012 || 1000,00 ||  || 1000,00\r\n");
         }
     }
 }

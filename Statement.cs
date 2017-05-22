@@ -5,7 +5,7 @@ using System.IO;
 public class Statement
 {
     private const string Header = "date || credit || debit || balance";
-    public static LinkedList<StatementLine> statements = new LinkedList<StatementLine>();
+    private LinkedList<StatementLine> statements = new LinkedList<StatementLine>();
 
     public void AddLine(DateTime date, Amount amount, Amount balance)
     {

@@ -24,7 +24,7 @@ public class StatementLine
     {
         if (amount < 0)
         {
-            printer.WriteLine(Line, date, String.Empty, amount.Positive(), balance);
+            printer.WriteLine(Line, date, String.Empty, amount, balance);
         }
         else
         {

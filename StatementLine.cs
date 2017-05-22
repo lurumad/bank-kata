@@ -21,6 +21,5 @@ public class StatementLine
 
     public void Print(TextWriter printer)
     {
-
     }
 }

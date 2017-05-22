@@ -12,7 +12,7 @@ namespace Bank
         {
             var account = Account.New();
             account.Deposit(DateTime.UtcNow, Amount.New(1000));
-            account.Balance.Should().Be(1000);
+            account.GetBalance().Should().Be(1000);
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace Bank
         {
             var account = Account.New();
             account.Withdrawal(DateTime.UtcNow, Amount.New(1000));
-            account.Balance.Should().Be(-1000);
+            account.GetBalance().Should().Be(-1000);
         }
 
         [Fact]

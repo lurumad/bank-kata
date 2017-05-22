@@ -14,6 +14,7 @@ public class Statement
 
     public void PrintStatements(TextWriter printer)
     {
+        printer.WriteLine(Header);
         foreach(var statement in statements)
         {
             statement.Print(printer);

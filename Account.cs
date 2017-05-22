@@ -33,7 +33,7 @@ namespace Bank
 
         public void PrintStatements(TextWriter printer)
         {
-            printer.Write("date || credit || debit || balance");
+            statement.PrintStatements(printer);
         }
     }
 }
